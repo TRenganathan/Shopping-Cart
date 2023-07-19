@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+.products img {
+  height: 150px;
+  width: 50%;
+  object-fit: contain;
+  margin: auto;
+}
