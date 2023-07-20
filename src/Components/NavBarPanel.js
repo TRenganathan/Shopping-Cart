@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { FaBagShopping } from "react-icons/fa6";
 export default function NavBarPanel() {
-    const cartProducts = useSelector(state => state.cart)
+    const {cart} = useSelector(state => state.cart)
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -14,10 +14,11 @@ export default function NavBarPanel() {
                 <Navbar.Toggle/>
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        <Nav.Link to="/cart" as={Link}> <FaBagShopping/> {cartProducts.length ? cartProducts.length : 0}</Nav.Link>
+                        <Nav.Link to="/cart" as={Link}> <FaBagShopping/> </Nav.Link>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
     )
 }
+// {cart.length ? cart.length : 0}

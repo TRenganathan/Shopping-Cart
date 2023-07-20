@@ -3,13 +3,13 @@ import {Card,Button,Container} from 'react-bootstrap'
 import { Remove } from "../Store/CartSlice"
 
 export default function Cart() {
-    const cartItem = useSelector((state)=>state.cart)
+    const cart = useSelector((state)=>state.cart)
 
     const dispatch = useDispatch()
-    const RemoveCart = (id) => {
-        dispatch(Remove(id))
+    const RemoveCart = (prod) => {
+        dispatch(Remove(prod))
     }
-    const cartProducts = cartItem.map((prod)=> {
+    const cartProducts = cart.map((prod)=> {
         return (
         <div className="col-md-3" style={{marginBottom:20}} key={prod.product.id}>
             <Card className="h-100" >
@@ -21,7 +21,7 @@ export default function Cart() {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer style={{background:'white'}}>
-                    <Button  variant="danger" onClick={()=> RemoveCart(prod.product.id)}>Remove From Cart </Button>
+                    <Button  variant="danger" onClick={(id)=> RemoveCart(prod.product.id)}>Remove From Cart </Button>
                 </Card.Footer>
             </Card>
         </div>
