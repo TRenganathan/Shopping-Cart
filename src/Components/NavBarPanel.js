@@ -7,6 +7,7 @@ export default function NavBarPanel() {
     return (
         <Container>
             <header>
+                
                 <Navbar expand="lg">
                     <Container>
                         <Navbar.Brand href="/">Shopping App</Navbar.Brand>
