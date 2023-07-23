@@ -6,11 +6,10 @@ const initialState = []
     initialState,
     reducers: {
         Add(state,action) {
-            // const cartIndex = state.cart.indexOf((item)=> item.product.id === action.payload.id)
-            // if(cartIndex == true ){
-            //     state.push(action.payload)
-            // }
-            state.push(action.payload)
+            const cartIndex = state.map((item)=> item.id === action.payload.id)
+            if(cartIndex != true ){
+                state.push(action.payload)
+            }
         },
         Remove(state,action){
            return state.filter(item => item.product.id !== action.payload)
