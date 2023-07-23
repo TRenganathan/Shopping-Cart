@@ -18,6 +18,7 @@ export default function Cart() {
     const max = 100;
    
     const cartProducts = cart.map((prod)=> {
+        
         return (
             <div className="col-md-3" style={{marginBottom:20}} key={prod.product.id}>
                 <Card className="h-100" >
